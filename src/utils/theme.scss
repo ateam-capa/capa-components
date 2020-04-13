@@ -1,0 +1,49 @@
+// variable
+// brand color set
+$BrandColor_Brand_1: #f0f9ff;
+$BrandColor_Brand_2: #a7dfff;
+$BrandColor_Brand_3: #009de7;
+$BrandColor_Brand_4: #10619a;
+$BrandColor_Brand_5: #334b70;
+$BrandColor_Brand_6: #263651;
+// alert color set
+$AlertColor_Alert_1: #ffd3d9;
+$AlertColor_Alert_2: #ff98a5;
+$AlertColor_Alert_3: #ed5a6d;
+$AlertColor_Alert_4: #c94354;
+$AlertColor_Alert_5: #993743;
+// gray scales color set
+$GrayScales_Gray_1: #ffffff;
+$GrayScales_Gray_2: #f9fafb;
+$GrayScales_Gray_3: #f3f5f7;
+$GrayScales_Gray_4: #ebeef1;
+$GrayScales_Gray_5: #dfe4e8;
+$GrayScales_Gray_6: #cfd6d8;
+$GrayScales_Gray_7: #bdc4c6;
+$GrayScales_Gray_8: #9da2a4;
+$GrayScales_Gray_9: #5e6467;
+$GrayScales_Gray_10: #4b5057;
+// background color set
+$BackgroundColor_OverlayGray: rgba(0, 0, 0, 0.5);
+$BackgroundColor_OverlayBlue: rgba(38, 54, 81, 0.8);
+// breakpoint values
+$Breakpoint_xs: "0px";
+$Breakpoint_sm: "600px";
+$Breakpoint_md: "960px";
+$Breakpoint_lg: "1280px";
+$Breakpoint_xl: "1960px";
+// z-index values
+$ZIndex_mobileStepper: 1000;
+$ZIndex_speedDial: 1050;
+$ZIndex_appBar: 1100;
+$ZIndex_drawer: 1200;
+$ZIndex_modal: 1300;
+$ZIndex_snackbar: 1400;
+$ZIndex_tooltip: 1500;
+
+// formatter
+// px to em
+@function pxToEm($px) {
+  $convertRem: $px / 16;
+  @return #{$convertRem}em;
+}

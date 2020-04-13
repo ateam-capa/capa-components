@@ -1,0 +1,49 @@
+{
+  "name": "@aimho/boilerplate-storybook",
+  "version": "1.0.0",
+  "description": "AimHo Boilerplate Storybook",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "prebuild": "rm -rf dist && tsc",
+    "build": "cp -R src/assets dist/ && cp -R src/components dist/ && cp -R src/api dist/",
+    "prepublishOnly": "rm -rf dist && tsc && cp -R src/assets dist/ && cp -R src/components dist/ && cp -R src/api dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aimho/boilerplate-storybook.git"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.0",
+    "intersection-observer": "^0.7.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-docs": "^5.2.8",
+    "@storybook/addon-knobs": "^5.2.8",
+    "@storybook/addon-viewport": "^5.3.13",
+    "@storybook/preset-create-react-app": "^1.5.2",
+    "@storybook/react": "^5.2.8",
+    "@types/node": "^13.7.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.13.0",
+    "babel-plugin-transform-imports": "^2.0.0",
+    "babel-preset-react-app": "^9.1.0",
+    "customize-cra": "^0.9.1",
+    "node-sass": "^4.13.1",
+    "react-app-rewired": "^2.1.5",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.1",
+    "typescript": "~3.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

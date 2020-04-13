@@ -1,0 +1,22 @@
+# dependencies
+/node_modules
+
+# production
+/src
+/public
+/storybook-static
+
+# misc
+/.storybook
+
+.editorconfig
+
+tslint.json
+tsconfig.json
+
+yarn.lock
+yarn-debug.log*
+yarn-error.log*
+
+cdls.creatable.com.conf
+docker*

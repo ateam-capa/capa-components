@@ -1,0 +1,38 @@
+import {
+  Meta,
+  Story,
+  Props,
+  Description,
+  Preview
+} from "@storybook/addon-docs/blocks";
+
+<Meta title="Utils|mediaQuery" />
+
+# mediaQuery
+
+#
+
+### setCSS(breakpoint: Breakpoint, changeStyle: any)
+
+- set media query in css
+- @param {Breakpoint} breakpoint
+- @param {any} changeStyle
+- @return {string} breakpoint 적용된 mediaQuery 스타일
+
+### 예제코드
+
+```
+  ${setCSS(Breakpoint.md, `min-width: auto;`)}
+```
+
+### Match(breakpoint: Breakpoint)
+
+- 현재 화면이 breakpoint 이하 인지 확인하기 위한 function
+- @param {Breakpoint} breakpoint
+- @return {boolean}
+
+### 예제코드
+
+```
+  const isChangeView = !Match(Breakpoint.md);
+```
