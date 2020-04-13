@@ -26,4 +26,4 @@
 #### Bug
 
 - Storybook Canvas 탭에서 `Knobs` 안보이는 경우
-  - 개발자도구 > Application > Local Storage > `storybook-layout` 항목 삭제 > 브라우저 새로고침
+- 개발자도구 > Application > Local Storage > `storybook-layout` 항목 삭제 > 브라우저 새로고침
