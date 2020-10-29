@@ -9,7 +9,7 @@ export interface Props {
   onUpload: (_: FileList) => void;
 }
 
-const ChatDrawerInputContainer: React.FC<Props> = props => {
+const ChatDrawerInputContainer: React.FC<Props> = (props) => {
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const uploadInputId = "upload-chat-file";
@@ -39,7 +39,7 @@ const ChatDrawerInputContainer: React.FC<Props> = props => {
       <InputAdornment className="input-adornment" position="end">
         <Send fontSize="inherit" onClick={onSend} />
       </InputAdornment>
-    )
+    ),
   };
 
   return (
@@ -48,9 +48,11 @@ const ChatDrawerInputContainer: React.FC<Props> = props => {
         type="file"
         name={uploadInputId}
         id={uploadInputId}
-        onChange={e => {
+        onChange={(e) => {
           setError(false);
-          props.onUpload(e.target.files);
+          if (e.target.files) {
+            props.onUpload(e.target.files);
+          }
         }}
       />
       <ChatDrawerInputPresenter
