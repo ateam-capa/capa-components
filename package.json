@@ -1,6 +1,6 @@
 {
   "name": "@ateam/components",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "common components",
   "license": "MIT",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Aimho/boilerplate-storybook.git"
+    "url": "https://ateamv.visualstudio.com/NCR/_git/creatable-components"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.0",
