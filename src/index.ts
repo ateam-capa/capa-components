@@ -1,20 +1,7 @@
-// utils functions
-import * as checker from "./utils/checker";
-import * as formatter from "./utils/formatter";
-import * as lazyLoading from "./utils/lazyLoading";
-import * as mediaQuery from "./utils/mediaQuery";
-import * as theme from "./utils/theme";
+// styles
+import colorSet from "./styles/colorSet";
+// components
+import Provider from "./components/Provider";
+import ChatDrawer from "./components/ChatDrawer";
 
-// Example components
-import Typography from "./components/Example/Typography";
-
-export {
-  // utils
-  checker,
-  formatter,
-  lazyLoading,
-  mediaQuery,
-  theme,
-  // Example
-  Typography,
-};
+export { colorSet, Provider, ChatDrawer };
