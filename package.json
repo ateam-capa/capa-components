@@ -1,15 +1,15 @@
 {
-  "name": "@aimho/boilerplate-storybook",
-  "version": "1.0.0",
-  "description": "AimHo Boilerplate Storybook",
+  "name": "@ateam/components",
+  "version": "1.0.1",
+  "description": "common components",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "start-storybook -p 6006",
     "prebuild": "rm -rf dist && tsc",
-    "build": "cp -R src/assets dist/ && cp -R src/components dist/ && cp -R src/api dist/",
-    "prepublishOnly": "rm -rf dist && tsc && cp -R src/assets dist/ && cp -R src/components dist/ && cp -R src/api dist/"
+    "build": "cp -R src/styles dist/ && cp -R src/components dist/",
+    "prepublishOnly": "rm -rf dist && tsc && cp -R src/styles dist/ && cp -R src/components dist/"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,12 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.9.0",
-    "intersection-observer": "^0.7.0"
+    "@material-ui/icons": "^4.9.1",
+    "@types/styled-components": "^5.1.4",
+    "intersection-observer": "^0.7.0",
+    "notistack": "^1.0.1",
+    "styled-components": "^5.2.0",
+    "styled-reset": "^4.3.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.2.8",
