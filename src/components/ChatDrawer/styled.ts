@@ -47,6 +47,7 @@ export const DrawerEmpty = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: calc(100vh - 130px);
   padding: 20px;
   padding-bottom: 0px;
@@ -58,6 +59,9 @@ export const DrawerEmpty = styled.section`
     text-align: center;
     font-size: 14px;
     line-height: 20px;
+    strong {
+      font-weight: 500;
+    }
   }
 `;
 
