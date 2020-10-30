@@ -11,13 +11,11 @@ export const DrawerHeader = styled.header`
     margin-left: 30px;
     display: inline-flex;
     align-items: center;
-    ${({ theme }) => css`
-      ${theme.breakpoints.down("xs")} {
-        display: block;
-        margin-left: 20px;
-        max-width: 176px;
-      }
-    `}
+    @media only screen and (max-width: 600px) {
+      display: block;
+      margin-left: 20px;
+      max-width: 176px;
+    }
 
     .title {
       font-weight: bold;
@@ -34,16 +32,32 @@ export const DrawerHeader = styled.header`
       white-space: nowrap;
       overflow-x: hidden;
       text-overflow: ellipsis;
-      ${({ theme }) => css`
-        ${theme.breakpoints.down("xs")} {
-          margin-left: 0px;
-        }
-      `}
+      @media only screen and (max-width: 600px) {
+        margin-left: 0px;
+      }
     }
   }
 
   .extra {
     margin-left: auto;
+  }
+`;
+
+export const DrawerEmpty = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 130px);
+  padding: 20px;
+  padding-bottom: 0px;
+  img {
+    width: 278px;
+    margin-bottom: 40px;
+  }
+  .description {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
   }
 `;
 
@@ -63,6 +77,8 @@ export const DrawerContentItem = styled.span.attrs(
 )`
   width: 100%;
   display: inline-flex;
+  flex: 0 0 auto;
+
   ${props =>
     props.isSender &&
     css`
@@ -85,17 +101,14 @@ export const DrawerContentItem = styled.span.attrs(
   }
 
   .msg-content {
-    flex: 0 0 auto;
     width: 400px;
     padding: 12px 16px;
     background-color: ${props =>
       props.isSender ? colorSet.backgroundDark : colorSet.gray000};
     border-radius: 8px;
-    ${({ theme }) => css`
-      ${theme.breakpoints.down("xs")} {
-        width: 280px;
-      }
-    `}
+    @media only screen and (max-width: 600px) {
+      width: 280px;
+    }
 
     .msg-info {
       display: flex;
@@ -151,7 +164,6 @@ export const DrawerInput = styled.div`
     display: none;
   }
   .input-adornment {
-    cursor: pointer;
     font-size: 20px;
     padding-bottom: 10px;
     margin-top: auto;

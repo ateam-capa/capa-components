@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { Button } from "@material-ui/core";
 import Provider from "../components/Provider";
 import ChatDrawer from "../components/ChatDrawer";
-import { MessageItem } from "../components/ChatDrawer/types";
-import avatarPartner from "./assets/avatarPartner.jpg";
 
 export default {
   title: "COMMON | ChatDrawer", // 스토리북에서 보여질 그룹과 경로를 명시
@@ -12,27 +10,6 @@ export default {
 };
 
 export const StroyBasic = () => {
-  const exampleItem: MessageItem = {
-    id: "1",
-    name: "조준호",
-    createdAt: new Date("2019-03-05").toDateString(),
-    file: {
-      file_key: "test",
-      file_name: "aimho.stl"
-    }
-  };
-  const exampleItem2: MessageItem = {
-    id: "2",
-    avatar: avatarPartner,
-    name: "크블",
-    createdAt: new Date().toDateString(),
-    content: "안녕하세요 반갑습니다."
-  };
-  const [messages] = useState(
-    Array.from({ length: 3 }, (_, index) =>
-      index % 2 ? exampleItem : exampleItem2
-    ) as MessageItem[]
-  );
   const [open, setOpen] = useState(false);
   const extra = (
     <Button
@@ -59,7 +36,7 @@ export const StroyBasic = () => {
         onSend={console.log}
         onUpload={console.log}
         onDownload={console.log}
-        messageItems={messages}
+        messageItems={[]}
         senderId="1"
         receiverLastSeen="2020-10-28"
       />

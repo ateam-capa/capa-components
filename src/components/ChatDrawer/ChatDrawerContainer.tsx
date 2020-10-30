@@ -22,7 +22,7 @@ interface Props
       | "messageItems"
       | "onDownload"
     >,
-    Pick<InputProps, "onSend" | "onUpload"> {
+    Pick<InputProps, "onSend" | "onUpload" | "disableInput"> {
   open: boolean;
 }
 

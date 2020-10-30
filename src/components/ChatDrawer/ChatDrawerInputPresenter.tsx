@@ -6,6 +6,7 @@ export interface Props {
   value?: string;
   onChange: (_: string) => void;
   InputProps: Partial<InputProps>;
+  disableInput?: boolean;
 }
 
 const ChatDrawerInputPresenter: React.FC<Props> = props => {
@@ -17,6 +18,7 @@ const ChatDrawerInputPresenter: React.FC<Props> = props => {
       placeholder="메세지를 입력해주세요"
       InputProps={props.InputProps}
       error={props.error}
+      disabled={props.disableInput}
       multiline
       fullWidth
     />

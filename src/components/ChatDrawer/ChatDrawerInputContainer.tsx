@@ -1,26 +1,30 @@
 import React, { useState } from "react";
 import { InputAdornment } from "@material-ui/core";
 import { AttachFile, Send } from "@material-ui/icons";
-import ChatDrawerInputPresenter from "./ChatDrawerInputPresenter";
+import ChatDrawerInputPresenter, {
+  Props as PresenterProps
+} from "./ChatDrawerInputPresenter";
 import { DrawerInput } from "./styled";
 
-export interface Props {
+export interface Props extends Pick<PresenterProps, "disableInput"> {
   onSend: (_: string) => void;
   onUpload: (_: FileList) => void;
 }
 
-const ChatDrawerInputContainer: React.FC<Props> = (props) => {
+const ChatDrawerInputContainer: React.FC<Props> = props => {
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const uploadInputId = "upload-chat-file";
 
   const onUpload = () => {
+    if (props.disableInput) return console.error("disable input");
     const upload = document.getElementById(uploadInputId);
     if (!upload) return console.error("not find upload input");
     return upload.click();
   };
 
   const onSend = () => {
+    if (props.disableInput) return console.error("disable input");
     if (!value) setError(true);
     else {
       setError(false);
@@ -31,15 +35,25 @@ const ChatDrawerInputContainer: React.FC<Props> = (props) => {
 
   const InputProps = {
     startAdornment: (
-      <InputAdornment className="input-adornment" position="start">
-        <AttachFile fontSize="inherit" onClick={onUpload} />
+      <InputAdornment
+        className="input-adornment"
+        position="start"
+        onClick={onUpload}
+        disablePointerEvents={props.disableInput}
+      >
+        <AttachFile fontSize="inherit" />
       </InputAdornment>
     ),
     endAdornment: (
-      <InputAdornment className="input-adornment" position="end">
-        <Send fontSize="inherit" onClick={onSend} />
+      <InputAdornment
+        className="input-adornment"
+        position="end"
+        onClick={onSend}
+        disablePointerEvents={props.disableInput}
+      >
+        <Send fontSize="inherit" />
       </InputAdornment>
-    ),
+    )
   };
 
   return (
@@ -48,7 +62,7 @@ const ChatDrawerInputContainer: React.FC<Props> = (props) => {
         type="file"
         name={uploadInputId}
         id={uploadInputId}
-        onChange={(e) => {
+        onChange={e => {
           setError(false);
           if (e.target.files) {
             props.onUpload(e.target.files);
@@ -60,6 +74,7 @@ const ChatDrawerInputContainer: React.FC<Props> = (props) => {
         value={value}
         onChange={setValue}
         InputProps={InputProps}
+        disableInput={props.disableInput}
       />
     </DrawerInput>
   );
