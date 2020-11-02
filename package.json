@@ -1,6 +1,6 @@
 {
   "name": "@ateam/components",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "common components",
   "license": "MIT",
   "main": "dist/index.js",
