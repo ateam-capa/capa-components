@@ -34,7 +34,6 @@ const ChatDrawerContainer: React.FC<Props> = props => {
       anchor="right"
       open={props.open}
       onClose={props.onClose}
-      BackdropProps={{ style: { backgroundColor: "transparent" } }}
       PaperProps={{
         style: {
           width: "100%",
