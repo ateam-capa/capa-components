@@ -36,13 +36,13 @@ const InputPresenter = (props: Props) => {
 
   return (
     <TextField
+      {...props.textFieldProps}
       value={value}
       variant="outlined"
       onClick={e => props.setAnchorEl(e.currentTarget)}
       InputProps={{
         endAdornment: <CalendarToday style={{ color: "#DADADA" }} />
       }}
-      {...props.textFieldProps}
     />
   );
 };
