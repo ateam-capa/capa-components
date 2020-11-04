@@ -7,8 +7,8 @@ import PopoverPresenter, {
 } from "./PopoverPresenter";
 
 interface Props
-  extends Pick<InputPresenterProps, "value" | "placeholder" | "errorMsg">,
-    Pick<PopoverPresenterProps, "onChange"> {}
+  extends Pick<InputPresenterProps, "value" | "textFieldProps">,
+    Pick<PopoverPresenterProps, "onChange" | "minDate"> {}
 
 const DatePickerContainer = (props: Props) => {
   const [anchorEl, setAnchorEl]: any = useState(undefined);
@@ -19,7 +19,7 @@ const DatePickerContainer = (props: Props) => {
       <PopoverPresenter
         anchorEl={anchorEl}
         onClose={() => setAnchorEl(undefined)}
-        onChange={props.onChange}
+        {...props}
       />
     </React.Fragment>
   );

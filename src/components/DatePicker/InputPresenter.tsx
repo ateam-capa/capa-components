@@ -1,13 +1,12 @@
 import React from "react";
-import { TextField } from "@material-ui/core";
+import { BaseTextFieldProps, TextField } from "@material-ui/core";
 import { CalendarToday } from "@material-ui/icons";
 import "react-calendar/dist/Calendar.css";
 
 export interface Props {
   value?: Date;
-  placeholder?: string;
-  errorMsg?: string;
   setAnchorEl: (_: any) => void;
+  textFieldProps?: BaseTextFieldProps;
 }
 
 const formatDate = (value: Date): string => {
@@ -22,7 +21,7 @@ const formatDate = (value: Date): string => {
   if (hour.length < 2) hour = "0" + hour;
   if (minutes.length < 2) minutes = "0" + minutes;
 
-  const result = "YYYY.MM.DD"
+  const result = "~YYYY.MM.DD"
     .replace("YYYY", String(year))
     .replace("MM", String(month))
     .replace("DD", String(day))
@@ -33,21 +32,17 @@ const formatDate = (value: Date): string => {
 };
 
 const InputPresenter = (props: Props) => {
-  const textFieldProps = {
-    value: props.value ? formatDate(props.value) : "",
-    error: props.errorMsg ? true : false,
-    helperText: props.errorMsg,
-    placeholder: props.placeholder
-  };
+  const value = props.value ? formatDate(props.value) : "";
 
   return (
     <TextField
-      {...textFieldProps}
+      value={value}
       variant="outlined"
       onClick={e => props.setAnchorEl(e.currentTarget)}
       InputProps={{
         endAdornment: <CalendarToday style={{ color: "#DADADA" }} />
       }}
+      {...props.textFieldProps}
     />
   );
 };

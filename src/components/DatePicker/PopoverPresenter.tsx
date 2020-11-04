@@ -9,6 +9,7 @@ export interface Props extends Pick<InputPresenterProps, "value"> {
   anchorEl: any;
   onClose: () => void;
   onChange: (_: Date) => void;
+  minDate?: Date;
 }
 
 const PopoverPresenter = (props: Props) => (
@@ -27,7 +28,8 @@ const PopoverPresenter = (props: Props) => (
   >
     <Calendar
       locale={"ko"}
-      value={props.value ? props.value : new Date()}
+      value={props.value}
+      minDate={props.minDate}
       onChange={date => {
         props.onChange(date as Date);
         props.onClose();
