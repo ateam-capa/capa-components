@@ -14,7 +14,7 @@ export interface Props extends Pick<PresenterProps, "disableInput"> {
 const Adornment: React.FC<{
   position: "end" | "start";
   onClick: () => void;
-  disabled: boolean;
+  disabled?: boolean;
 }> = props => (
   <InputAdornment
     className="input-adornment"
