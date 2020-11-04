@@ -108,7 +108,7 @@ export const DrawerContentItem = styled.span.attrs(
     width: 400px;
     padding: 12px 16px;
     background-color: ${props =>
-      props.isSender ? colorSet.backgroundDark : colorSet.gray000};
+      props.isSender ? colorSet.primary100 : colorSet.gray000};
     border-radius: 8px;
     @media only screen and (max-width: 600px) {
       width: 280px;
