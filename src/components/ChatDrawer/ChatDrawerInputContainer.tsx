@@ -22,9 +22,7 @@ const Adornment: React.FC<{
     onClick={props.onClick}
     disablePointerEvents={props.disabled}
   >
-    <IconButton size="small" disabled={props.disabled}>
-      {props.children}
-    </IconButton>
+    <IconButton disabled={props.disabled}>{props.children}</IconButton>
   </InputAdornment>
 );
 
