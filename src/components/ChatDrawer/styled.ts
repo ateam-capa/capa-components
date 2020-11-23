@@ -140,6 +140,7 @@ export const DrawerContentItem = styled.span.attrs(
       font-size: 14px;
       line-height: 20px;
       white-space: pre-wrap;
+      word-break: break-all;
     }
 
     .file-download-btn {

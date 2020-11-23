@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@material-ui/core";
 import Provider from "../components/Provider";
 import ChatDrawer from "../components/ChatDrawer";
+import { MessageItem } from "../components/ChatDrawer/types";
 
 export default {
   title: "COMMON | ChatDrawer", // 스토리북에서 보여질 그룹과 경로를 명시
@@ -21,6 +22,16 @@ export const StroyBasic = () => {
     </Button>
   );
 
+  const dummyChat: MessageItem[] = [
+    {
+      id: "1",
+      name: "aimho",
+      createdAt: new Date().toString(),
+      createdAtFormat: "YYYY-MM-DD",
+      content: "안녕하세요고개잉니림ㄴ아ㅓㄹㅇㄴㅁㅇ랜야머란이러매"
+    }
+  ];
+
   return (
     <Provider>
       <Button color="primary" onClick={() => setOpen(true)}>
@@ -36,7 +47,7 @@ export const StroyBasic = () => {
         onSend={console.log}
         onUpload={console.log}
         onDownload={console.log}
-        messageItems={[]}
+        messageItems={dummyChat}
         senderId="1"
         receiverLastSeen="2020-10-28"
       />
