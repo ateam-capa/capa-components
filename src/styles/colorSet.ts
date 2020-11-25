@@ -8,6 +8,7 @@ const colorSet = {
   errorLight: '#fce7e7',
   errorBase: '#e53935',
   errorDark: '#c62828',
+  successBase: "#2BC404",
   warningLight: '#fff5e5',
   warningBase: '#ffc107',
   warningDark: '#ffa000',
