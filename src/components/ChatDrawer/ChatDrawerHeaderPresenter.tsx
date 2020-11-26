@@ -5,8 +5,8 @@ import { DrawerHeader } from "./styled";
 import colorSet from "../../styles/colorSet";
 
 export interface Props {
-  status: string;
-  isConnect: boolean;
+  status?: string;
+  isConnect?: boolean;
   title: string;
   subTitle?: string;
   extra?: React.ReactNode;
