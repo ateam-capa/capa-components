@@ -39,6 +39,8 @@ export const StroyBasic = () => {
       </Button>
 
       <ChatDrawer
+        isConnect
+        status="CONNECTED"
         title="업체이름"
         subTitle="업체주소"
         extra={extra}

@@ -9,10 +9,7 @@ export const DrawerHeader = styled.header`
 
   .title-wrapper {
     margin-left: 30px;
-    display: inline-flex;
-    align-items: center;
     @media only screen and (max-width: 600px) {
-      display: block;
       margin-left: 20px;
       max-width: 176px;
     }

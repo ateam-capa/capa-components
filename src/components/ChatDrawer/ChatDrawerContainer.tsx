@@ -1,19 +1,22 @@
 import React from "react";
 import { Drawer, useMediaQuery } from "@material-ui/core";
 import ChatDrawerHeaderPresenter, {
-  Props as HeaderProps
+  Props as HeaderProps,
 } from "./ChatDrawerHeaderPresenter";
 import ChatDrawerContentPresenter, {
-  Props as ContentProps
+  Props as ContentProps,
 } from "./ChatDrawerContentPresenter";
 import ChatDrawerInputContainer, {
-  Props as InputProps
+  Props as InputProps,
 } from "./ChatDrawerInputContainer";
 import theme from "../../styles/theme";
 import colorSet from "../../styles/colorSet";
 
 interface Props
-  extends Pick<HeaderProps, "title" | "subTitle" | "extra" | "onClose">,
+  extends Pick<
+      HeaderProps,
+      "status" | "isConnect" | "title" | "subTitle" | "extra" | "onClose"
+    >,
     Pick<
       ContentProps,
       | "senderId"
@@ -26,7 +29,7 @@ interface Props
   open: boolean;
 }
 
-const ChatDrawerContainer: React.FC<Props> = props => {
+const ChatDrawerContainer: React.FC<Props> = (props) => {
   const matches = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
@@ -38,8 +41,8 @@ const ChatDrawerContainer: React.FC<Props> = props => {
         style: {
           width: "100%",
           maxWidth: !matches ? "600px" : "100%",
-          backgroundColor: colorSet.backgroundLight
-        }
+          backgroundColor: colorSet.backgroundLight,
+        },
       }}
       elevation={4}
     >
