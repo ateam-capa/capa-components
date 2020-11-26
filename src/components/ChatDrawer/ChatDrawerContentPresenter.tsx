@@ -1,6 +1,10 @@
 import React from "react";
-import { Button } from "@material-ui/core";
-import { GetApp } from "@material-ui/icons";
+import { Button, Grid, Typography } from "@material-ui/core";
+import {
+  GetApp,
+  CheckCircleOutline,
+  WarningOutlined
+} from "@material-ui/icons";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { DrawerContent, DrawerContentItem, DrawerEmpty } from "./styled";
@@ -12,6 +16,7 @@ export interface Props {
   receiverLastSeen?: string;
   messageItems: MessageItem[];
   emptyImg?: string;
+  isConnect?: boolean;
   onDownload: (_?: MessageFile) => void;
 }
 
@@ -49,8 +54,16 @@ const ChatDrawerContentContainer: React.FC<Props> = props => {
         };
 
         const Seen = () => (isSeen() ? null : <p className="seen">1</p>);
-        const Avatar = () =>
-          item.avatar ? <img src={item.avatar} alt="avatar" /> : null;
+        const Avatar = () => {
+          if (!item.type) {
+            return item.avatar ? <img src={item.avatar} alt="avatar" /> : null;
+          }
+          return props.isConnect ? (
+            <CheckCircleOutline fontSize="small" />
+          ) : (
+            <WarningOutlined fontSize="small" />
+          );
+        };
 
         const Content = () => {
           if (item.file) {
@@ -80,6 +93,25 @@ const ChatDrawerContentContainer: React.FC<Props> = props => {
           }
           return <p className="content">{item.content}</p>;
         };
+
+        if (item.type === "CONNECTED") {
+          return (
+            <Grid
+              container
+              justify="center"
+              alignItems="center"
+              spacing={1}
+              style={{ margin: "20px auto" }}
+            >
+              <Grid item>
+                <Avatar />
+              </Grid>
+              <Grid item>
+                <Typography variant="subtitle2">{item.content}</Typography>
+              </Grid>
+            </Grid>
+          );
+        }
 
         return (
           <DrawerContentItem isSender={isSender} key={index}>

@@ -6,6 +6,7 @@ export interface MessageItem {
   createdAtFormat: string;
   content?: string;
   file?: MessageFile;
+  type?: string;
 }
 
 export interface MessageFile {
