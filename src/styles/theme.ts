@@ -1,5 +1,5 @@
-import { createMuiTheme } from '@material-ui/core';
-import colorSet from './colorSet';
+import { createMuiTheme } from "@material-ui/core";
+import colorSet from "./colorSet";
 
 const theme = createMuiTheme({
   palette: {
@@ -9,7 +9,7 @@ const theme = createMuiTheme({
       dark: colorSet.primary800
     },
     secondary: {
-      main: colorSet.primary1000
+      main: colorSet.primary900
     },
     error: {
       light: colorSet.errorLight,
