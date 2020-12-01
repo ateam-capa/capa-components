@@ -1,6 +1,6 @@
 {
   "name": "@creatable/capa-components",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "common components",
   "license": "MIT",
   "main": "dist/index.js",
