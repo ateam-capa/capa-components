@@ -31,6 +31,8 @@ interface Props
 
 const ChatDrawerContainer: React.FC<Props> = props => {
   const matches = useMediaQuery(theme.breakpoints.down("xs"));
+  const disableInput =
+    props.disableInput || (props.status === "CONNECTED" && !props.isConnect);
 
   return (
     <Drawer
@@ -48,10 +50,7 @@ const ChatDrawerContainer: React.FC<Props> = props => {
     >
       <ChatDrawerHeaderPresenter {...props} />
       <ChatDrawerContentPresenter {...props} />
-      <ChatDrawerInputContainer
-        {...props}
-        disableInput={props.disableInput || props.status === "CONNECTED"}
-      />
+      <ChatDrawerInputContainer {...props} disableInput={disableInput} />
     </Drawer>
   );
 };

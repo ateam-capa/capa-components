@@ -51,7 +51,6 @@ export const StroyBasic = () => {
       </Button>
 
       <ChatDrawer
-        isConnect
         open={open}
         status="CONNECTED"
         title="업체이름"
