@@ -9,7 +9,7 @@ const theme = createMuiTheme({
       dark: colorSet.primary800
     },
     secondary: {
-      main: colorSet.primary900
+      main: colorSet.primary1000
     },
     error: {
       light: colorSet.errorLight,
