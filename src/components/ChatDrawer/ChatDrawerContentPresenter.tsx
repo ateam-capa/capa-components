@@ -94,7 +94,7 @@ const ChatDrawerContentContainer: React.FC<Props> = props => {
           return <p className="content">{item.content}</p>;
         };
 
-        if (item.type === "CONNECTED") {
+        if (item.type === "CONNECTED" || item.type === "NOT_CONNECTED") {
           return (
             <Grid
               container
