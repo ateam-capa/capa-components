@@ -101,7 +101,11 @@ const ChatDrawerContentContainer: React.FC<Props> = props => {
               justify="center"
               alignItems="center"
               spacing={1}
-              style={{ margin: "20px auto" }}
+              style={{
+                margin: "20px auto",
+                display: "inline-flex",
+                flex: "0 0 auto"
+              }}
               key={index}
             >
               <Grid item>
